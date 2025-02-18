@@ -12,7 +12,7 @@ Create DBContext Class
 Create a Connection String in appsettings.json
 
 4=>
-Register Connection String in 
+Register Connection String in program.cs
 
 5=>
 Add-Migration and run migration

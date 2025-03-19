@@ -1,1 +1,36 @@
-
+INSERT INTO [SemCRM].[ums].[MenuConfig] (
+    menuConfigId,
+    OrganizationId,
+    RoleId,
+    ParentMenuId,
+    TargetSource,
+    Icon,
+    MenuSeqNo,
+    Type,
+    ScreenTitle,
+    IsActive,
+    CreatedById,
+    CreatedOn,
+    AlteredById,
+    AlteredOn,
+    ActionTypeId,
+    UserLogId
+)
+VALUES (
+     1,
+    1,              -- OrganizationId (NULL allowed, replace with actual value or NULL)
+    1,              -- RoleId (NULL allowed, replace with actual value or NULL)
+    0,              -- ParentMenuId (NULL allowed, replace with actual parent ID or NULL for top-level)
+    '/accounts',-- TargetSource (NOT NULL, route for Accounts)
+    'supervisor_account',  -- Icon (NULL allowed, optional icon class)
+    0,              -- MenuSeqNo (NOT NULL, order under parent)
+    'link',         -- Type (NULL allowed, menu type)
+    'Accounts',     -- ScreenTitle (NULL allowed, display name)
+    1,              -- IsActive (NOT NULL, 1 = active, 0 = inactive)
+    1,             -- CreatedById (NULL allowed, replace with actual user ID or NULL)
+   GETDATE(),      -- CreatedOn (NOT NULL, current timestamp)
+    NULL,           -- AlteredById (NULL allowed)
+   GETDATE(),        -- AlteredOn (NOT NULL, but can be NULL initially in some MySQL configs)
+    1,              -- ActionTypeId (NOT NULL, default to 0 or specific value)
+    NULL            -- UserLogId (NULL allowed)
+);
